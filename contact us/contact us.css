@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: hsla(0, 100%, 50%, 1);
+    background-image: radial-gradient(
+            at 40% 20%,
+            hsla(28, 100%, 74%, 1) 0px,
+            transparent 50%
+        ),
+        radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
+        radial-gradient(
+            at 80% 50%,
+            hsla(340, 100%, 76%, 1) 0px,
+            transparent 50%
+        ),
+        radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
+        radial-gradient(
+            at 80% 100%,
+            hsla(242, 100%, 70%, 1) 0px,
+            transparent 50%
+        ),
+        radial-gradient(at 0% 0%, hsla(343, 100%, 76%, 1) 0px, transparent 50%);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 10px;
+    padding: 20px 30px;
+    border: 2px solid #000;
+    text-align: center;
+    min-width: 368px;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 50px;
+}
+
+label {
+    text-align: left;
+    font-size: 19px;
+    font-weight: 500;
+    margin: 10px 0;
+    display: block;
+}
+
+input,
+textarea {
+    width: 368px;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    resize: none;
+}
+
+input::placeholder {
+    color: #222;
+}
+
+input:focus {
+    background-color: gray;
+}
+
+input:focus::placeholder {
+    color: antiquewhite;
+}
+
+textarea::placeholder {
+    color: #222;
+}
+
+textarea:focus {
+    background-color: gray;
+}
+
+textarea:focus::placeholder {
+    color: antiquewhite;
+}
+
+button {
+    width: 100%;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: 500;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
