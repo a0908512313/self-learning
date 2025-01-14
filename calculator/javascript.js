@@ -17,7 +17,9 @@ buttons.forEach((button) => {
 			}
 		} else if (value == "CE") {
 			main.innerText = "0";
-			history.innerText = "";
+			history.innerText = "0";
+		} else if (value == "=") {
+			main.innerText = eval(history);
 		}
 	});
 });
