@@ -4,12 +4,99 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Calculator</title>
-		<link rel="stylesheet" href="style.css" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #000000;
+				font-family: Arial, sans-serif;
+			}
+
+			.calculator {
+				width: 240px;
+				background: #333;
+				border-radius: 10px;
+				padding: 20px;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+			}
+			.displays {
+				margin-bottom: 20px;
+			}
+
+			#history {
+				height: 35px;
+				color: white;
+				text-align: end;
+				font-size: 13px;
+				background: #444;
+				border: 2px solid #888;
+				border-radius: 5px;
+				padding: 10px;
+				margin-bottom: 10px;
+			}
+
+			#history > span {
+				opacity: 0.7;
+			}
+
+			#main {
+				height: 40px;
+				color: white;
+				text-align: end;
+				font-size: 20px;
+				background: #444;
+				border: 2px solid #888;
+				border-radius: 5px;
+				padding: 10px;
+				margin-bottom: 20px;
+			}
+
+			.buttons {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+
+			.row {
+				display: flex;
+				justify-content: space-between;
+				gap: 10px;
+			}
+
+			button {
+				height: 50px;
+				width: 50px;
+				border-radius: 5px;
+				outline: none;
+				border: none;
+				background: #555;
+				color: white;
+				font-size: 18px;
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+
+			button:hover {
+				background: #777;
+			}
+
+			button:active {
+				background: #999;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="calculator">
 			<div class="displays">
-				<div class="display" id="history">0</div>
+				<div class="display" id="history"><span>0</span></div>
 				<div class="display" id="main">0</div>
 			</div>
 
@@ -41,6 +128,32 @@
 				</div>
 			</div>
 		</div>
-		<script src="javascript.js"></script>
+		<script>
+			const main = document.getElementById("main");
+			const history = document.getElementById("history");
+			const buttons = document.querySelectorAll("button");
+
+			buttons.forEach((button) => {
+				button.addEventListener("click", () => {
+					const value = button.innerText;
+					if (value != "=") {
+						history.innerText += value;
+					}
+					if (!isNaN(value)) {
+						if (main.innerText == "0") {
+							history.innerText = value;
+							main.innerText = value;
+						} else {
+							main.innerText += value;
+						}
+					} else if (value == "CE") {
+						main.innerText = "0";
+						history.innerText = "0";
+					} else if (value == "=") {
+						main.innerText = eval(history);
+					}
+				});
+			});
+		</script>
 	</body>
 </html>
