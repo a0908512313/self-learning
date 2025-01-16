@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>BMI calculator</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-family: Arial, sans-serif;
+			}
+			input {
+				width: 150px;
+				height: 50px;
+				padding: 10px;
+				border: 1px #222 solid;
+				border-radius: 10px;
+				transition: all 0.3s ease;
+			}
+			input:focus {
+				border-color: #555;
+			}
+			button {
+				width: 100px;
+				height: 50px;
+				padding: 10px;
+				border: 1px #222 solid;
+				border-radius: 10px;
+				transition: all 0.3 ease;
+			}
+			button:hover {
+				border: 2px #222 solid;
+			}
+			button:active {
+				background-color: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<input type="text" id="height" placeholder="Height" /><select
+					name=""
+					id="heightUnit"
+				></select>
+			</div>
+			<div class="row">
+				<input type="text" id="weight" placeholder="Weight" /><select
+					name=""
+					id="weightUnit"
+				></select>
+			</div>
+
+			<button id="button">Calculate</button>
+		</div>
+
+		<script></script>
+	</body>
+</html>
