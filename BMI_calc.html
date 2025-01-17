@@ -19,11 +19,14 @@
 			}
 			.row {
 				display: flex;
-
 				width: 200px;
 				justify-content: space-around;
+				align-items: center;
 				gap: 10px;
 				margin-bottom: 20px;
+			}
+			#unit {
+				margin-left: 10px;
 			}
 			input {
 				width: 150px;
@@ -35,6 +38,9 @@
 			}
 			input:focus {
 				border-color: #555;
+			}
+			select {
+				padding: 5px;
 			}
 			button {
 				width: 100px;
@@ -55,16 +61,21 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<input type="text" id="height" placeholder="Height" /><select
-					name=""
-					id="heightUnit"
-				></select>
+				<input type="text" id="height" placeholder="Height" />
+				<span id="unit">Unit</span>
+				<select name="" id="heightUnit" required>
+					<option value="cm">cm</option>
+					<option value="m">m</option>
+					<option value="ft">ft</option>
+				</select>
 			</div>
 			<div class="row">
-				<input type="text" id="weight" placeholder="Weight" /><select
-					name=""
-					id="weightUnit"
-				></select>
+				<input type="text" id="weight" placeholder="Weight" />
+				<span id="unit">Unit</span>
+				<select name="" id="weightUnit" required>
+					<option value="kg">KG</option>
+					<option value="lb">LB</option>
+				</select>
 			</div>
 
 			<button id="button">Calculate</button>
